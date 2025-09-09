@@ -24,27 +24,27 @@ class AbrigoAnimais {
     const ordem = parseLista(ordemAnimais, a => a.toLowerCase());
 
     if (ordem.length === 0) {
-      return { erro: 'Animal inválido' };
+      return { erro: 'Animal inválido!' };
     }
 
     for (const a of ordem) {
       if (!this.animais[a]) {
-        return { erro: 'Animal inválido' };
+        return { erro: 'Animal inválido!' };
       }
     }
    
     if (new Set(ordem).size !== ordem.length) {
-      return { erro: 'Animal inválido' };
+      return { erro: 'Animal inválido!' };
     }
 
     const temDuplicado = arr => new Set(arr).size !== arr.length;
     if (temDuplicado(brinquedos1) || temDuplicado(brinquedos2)) {
-      return { erro: 'Brinquedo inválido' };
+      return { erro: 'Brinquedo inválido!' };
     }
     
     for (const b of [...brinquedos1, ...brinquedos2]) {
       if (!this.brinquedosValidos.has(b)) {
-        return { erro: 'Brinquedo inválido' };
+        return { erro: 'Brinquedo inválido!' };
       }
     }
 
